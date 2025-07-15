@@ -5,6 +5,20 @@ class PagesController < ApplicationController
     @stats = home_stats
   end
 
+
+
+  def contact
+  end
+
+  def legal
+  end
+
+  def privacy
+  end
+
+  def terms
+  end
+
   private
 
   def featured_creators
@@ -29,7 +43,7 @@ class PagesController < ApplicationController
     {
       directors_count: Creator.verified.count,
       movies_count: Movie.approved.count,
-      venues_count: Event.distinct.count('venue_name, venue_address'),
+      venues_count: Event.select(:venue_name, :venue_address).distinct.count,
       events_count: Event.upcoming.count
     }
   end
