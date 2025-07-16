@@ -17,12 +17,17 @@ Rails.application.routes.draw do
   end
 
   resources :events do
-    resources :participations, only: [ :create, :destroy ]
+    resources :participations, only: [:new, :create, :destroy ]
   end
 
   resources :creators
   resources :participations, only: [ :index, :show ]
   resources :reviews, only: [ :index, :show ]
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
 
   get "up" => "rails/health#show", as: :rails_health_check
 end
