@@ -75,10 +75,15 @@ _Comprehensive admin panel for managing events, users, and analytics_
 ![Payment Process](docs/screenshots/payment.png)
 _Secure Stripe integration for seamless booking experience_
 
+<div align="center">
+
 ### 📱 Mobile Responsive
 
 ![Mobile View](docs/screenshots/mobile.png)
+
 _Optimized mobile experience for on-the-go booking_
+
+</div>
 
 ---
 
@@ -86,8 +91,8 @@ _Optimized mobile experience for on-the-go booking_
 
 | Category           | Technologies                           |
 | ------------------ | -------------------------------------- |
-| **Backend**        | Ruby 3.4.2, Rails 8.0.2                |
-| **Frontend**       | Stimulus JS, Tailwind CSS 4.1          |
+| **Backend**        | Ruby 3.4.5, Rails 8.0.2.1              |
+| **Frontend**       | Stimulus JS, Tailwind CSS 4.3.0        |
 | **Database**       | PostgreSQL with ActiveRecord           |
 | **Authentication** | Devise with Confirmable & Bcrypt       |
 | **Payments**       | Stripe API integration                 |
@@ -153,8 +158,8 @@ Favorite (user-movie bookmark system)
 
 ### Prerequisites
 
-- Ruby 3.4.2+
-- Rails 8.0.2
+- Ruby 3.4.5+
+- Rails 8.0.2.1
 - PostgreSQL 14+
 - Node.js 18+ (for Stimulus)
 
@@ -162,8 +167,8 @@ Favorite (user-movie bookmark system)
 
 ```bash
 # Clone the repository
-git clone https://github.com/Paarroo/cine_room.git
-cd cine_room
+git clone https://github.com/Paarroo/Final_Project_THP_Fullstack_Ruby0nRails_CineRoom.git
+cd Final_Project_THP_Fullstack_Ruby0nRails_CineRoom
 
 # Install Ruby dependencies
 bundle install
@@ -296,21 +301,9 @@ The application is deployed on Heroku with:
 
 ## 👥 Team & Contributors
 
-### 🚀 Active Contributors
+**Théo BANNERY** - Lead Developer, Project Architect & UI/UX Design
 
-# **Théo BANNERY** - Lead Developer, Project Architect & UI/UX Design
-
-# **Florian BENOIT** - Full-Stack Developer & UI/UX Designer
-
-_This project represents the collaborative effort of the active development team, with significant contributions from both Théo and Florian throughout the complete development lifecycle._
-
-### Project Mentorship
-
-- **Winny Drancourt** - Technical Mentor (The Hacking Project)
-
-### Contributor
-
-- **Mathieu MARILLER** - Initial project contributor (departed early in development)
+**Florian BENOIT** - Full-Stack Developer & UI/UX Designer
 
 ---
 
@@ -337,7 +330,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## 🙏 Acknowledgments
 
 - **The Hacking Project (THP)** - For providing comprehensive full-stack development training
-- **Winny Drancourt** - For technical mentorship and guidance throughout the project
 - **Rails Community** - For the amazing framework and ecosystem
 - **Stripe** - For secure payment processing infrastructure
 - **Heroku** - For reliable cloud hosting platform

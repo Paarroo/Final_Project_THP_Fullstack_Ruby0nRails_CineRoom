@@ -1,50 +1,50 @@
 source "https://rubygems.org"
-ruby "3.4.2"
+ruby "3.4.5"
 
 # Production and Development gems
-gem "rails", "~> 8.0.2"
+gem "rails", "~> 8.0.2.1"
 gem "pg", "~> 1.6"
-gem "puma", ">= 5.0"
+gem "puma", "~> 7.0"
 gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
 gem "propshaft"
-gem "importmap-rails"
-gem "turbo-rails"
-gem "stimulus-rails"
+gem "importmap-rails", "~> 2.2"
+gem "turbo-rails", "~> 2.0"
+gem "stimulus-rails", "~> 1.3"
 gem "tailwindcss-rails"
-gem "jbuilder"
-gem "devise"
-gem "cancancan"
+gem "jbuilder", "~> 2.14"
+gem "devise", "~> 4.9"
+gem "cancancan", "~> 3.5"
 gem 'activeadmin', '~> 3.2'
-gem "stripe"
-gem "stripe_event"
-gem "money-rails"
-gem "kaminari"
-gem "chronic"
-gem "friendly_id"
-gem "noticed"
-gem "turbo_power"
-gem "view_component"
+gem "stripe", "~> 15.5"
+gem "stripe_event", "~> 2.7"
+gem "money-rails", "~> 1.15"
+gem "kaminari", "~> 1.2"
+gem "chronic", "~> 0.10"
+gem "friendly_id", "~> 5.5"
+gem "noticed", "~> 2.6"
+gem "turbo_power", "~> 0.7"
+gem "view_component", "~> 4.0"
 gem "image_processing", "~> 1.2"
 gem "aws-sdk-s3", require: false
-gem 'cloudinary'
+gem 'cloudinary', '~> 2.4'
 gem 'activestorage-cloudinary-service'
 gem "premailer-rails"
 gem "nokogiri"
-gem "geocoder"
+gem "geocoder", "~> 1.8"
 gem "opencage-geocoder", "~> 3.2"
 # gem "leaflet-rails" # Using CDN instead
-gem "valid_email2"
-gem "rqrcode"
-gem "mini_magick"
-gem "sidekiq"
+gem "valid_email2", "~> 7.0"
+gem "rqrcode", "~> 3.1"
+gem "mini_magick", "~> 5.3"
+gem "sidekiq", "~> 8.0"
 gem "bootsnap", require: false
 gem "kamal", require: false
 gem "thruster", require: false
 gem "tzinfo-data", platforms: %i[windows jruby]
-gem "rspec-rails"
-gem 'factory_bot_rails', '~> 6.4'
+gem "rspec-rails", "~> 8.0"
+gem 'factory_bot_rails', '~> 6.5'
 gem 'faker', '~> 3.2'
 gem 'whenever', require: false
 

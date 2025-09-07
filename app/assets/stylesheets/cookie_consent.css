@@ -251,3 +251,22 @@ button:focus,
 .cookie-subtext {
   color: #e5e7eb !important;
 }
+
+/* Override admin-hidden-default for cookie elements */
+#cookie-consent-banner.admin-hidden-default {
+  display: block !important; /* Allow JavaScript to control visibility */
+}
+
+#cookie-settings-modal.admin-hidden-default {
+  display: none !important; /* Start hidden, JavaScript will show as flex */
+}
+
+/* When JavaScript shows the modal, ensure it displays properly */
+#cookie-settings-modal[style*="display: flex"] {
+  display: flex !important;
+}
+
+/* When JavaScript shows the banner, ensure proper initial state */
+#cookie-consent-banner[style*="display: block"] {
+  display: block !important;
+}

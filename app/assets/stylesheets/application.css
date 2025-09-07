@@ -1,77 +1,135 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
-/* Fonts (jury max 3) */
+/* Tailwind v4 CSS Configuration */
+@theme {
+  /* Colors - Cinema Theme */
+  --color-primary: #f59e0b;
+  --color-surface: #0a0a0a;
+  --color-content: #ffffff;
+  --color-muted: #6b7280;
+  --color-accent: #2563eb;
+  
+  /* Custom Dark Colors */
+  --color-dark-100: #1a1a1a;
+  --color-dark-200: #151515;
+  --color-dark-300: #111111;
+  --color-dark-400: #0a0a0a;
+  
+  /* Custom Gold Colors */
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+  
+  /* Custom Cinema Colors */
+  --color-cinema-red: #dc2626;
+  --color-cinema-blue: #2563eb;
+  
+  /* Typography */
+  --font-family-primary: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --font-family-display: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --font-family-mono: "JetBrains Mono", monospace;
+  
+  /* Spacing */
+  --spacing-nav: 4rem;
+  --spacing-container: 80rem;
+  
+  /* Transitions */
+  --transition-duration-fast: 0.15s;
+  --transition-duration-normal: 0.3s;
+  --transition-duration-slow: 0.6s;
+  --transition-timing-function-default: ease-out;
+}
+
+/* Cookie Modal Overrides - Fix admin-hidden-default conflict */
+#cookie-consent-banner.admin-hidden-default {
+  display: block !important;
+}
+
+#cookie-settings-modal.admin-hidden-default {
+  display: none !important;
+}
+
+#cookie-settings-modal[style*="display: flex"] {
+  display: flex !important;
+}
+
+#cookie-consent-banner[style*="display: block"] {
+  display: block !important;
+}
+
+/* Fonts Import */
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
 
-/* GLOBAL VARIABLES - Couleurs limitées (jury: 5 max) */
-:root {
-  --color-primary: #f59e0b; /* gold-500 */
-  --color-surface: #0a0a0a; /* dark-400 */
-  --color-content: #ffffff; /* white text */
-  --color-muted: #6b7280; /* neutral gray */
-  --color-accent: #2563eb; /* cinema-blue */
-
-  --font-primary: "Atkinson Hyperlegible", system-ui, sans-serif;
-  --font-display: "Atkinson Hyperlegible", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-
-  --nav-height: 4rem;
-  --container-max: 80rem;
-
-  --transition-fast: 0.15s ease-out;
-  --transition-normal: 0.3s ease-out;
-  --transition-slow: 0.6s ease-out;
-}
-
 /* ===== FAVORITES STYLES ===== */
 .favorite-btn {
-  @apply relative transition-all duration-300;
+  position: relative;
+  transition: all 0.3s;
 }
 
 .favorite-btn:not(.favorited) {
-  @apply text-white hover:text-gold-400;
+  color: white;
+}
+
+.favorite-btn:not(.favorited):hover {
+  color: #fbbf24;
 }
 
 .favorite-btn.favorited {
-  @apply text-red-500;
+  color: #ef4444;
 }
 
 .favorite-btn.favorited i {
-  @apply text-red-500;
+  color: #ef4444;
 }
 
 .favorite-btn:hover i {
-  @apply scale-110;
+  transform: scale(1.1);
 }
 
 .favorites-count {
-  @apply absolute -top-1 -right-1 bg-gold-500 text-white text-xs 
-         rounded-full w-5 h-5 flex items-center justify-center font-bold
-         transition-all duration-300;
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  background-color: #f59e0b;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: all 0.3s;
 }
 
 .favorites-count:empty {
-  @apply hidden;
+  display: none;
 }
 
 /* ===== EMPTY STATE STYLES ===== */
 .favorites-empty-state {
-  @apply text-center py-16;
+  text-align: center;
+  padding: 4rem 0;
 }
 
 .favorites-empty-state i {
-  @apply text-6xl text-gray-400 mb-4;
+  font-size: 3.75rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
 }
 
 .favorites-empty-state h3 {
-  @apply text-2xl font-bold text-white mb-2;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
 }
 
 .favorites-empty-state p {
-  @apply text-gray-400 mb-6;
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
 }
 
 /* OPTIONAL CLASSES — mirror tailwind.config.js if not building dynamically */
@@ -229,7 +287,7 @@ h6 {
 }
 
 
-/* GLASS EFFECTS */
+/* GLASS EFFECTS - Tailwind v4 Compatible */
 .glass-effect {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -250,8 +308,9 @@ h6 {
 /* CARDS */
 /* Enhanced card hover animations */
 .card-hover {
-  @apply transition-all duration-500 ease-out transform-gpu;
+  transition: all 0.5s ease-out;
   transition-property: transform, box-shadow, filter;
+  transform: translateZ(0);
 }
 
 .card-hover:hover {
@@ -394,7 +453,8 @@ h6 {
 
 /* Interactive elements */
 .card-button {
-  @apply transition-all duration-300 transform-gpu;
+  transition: all 0.3s;
+  transform: translateZ(0);
 }
 
 .card-button:hover {
@@ -415,16 +475,60 @@ h6 {
 
 /* BUTTONS */
 .btn-primary {
-  @apply bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary/50;
-  font-family: var(--font-primary);
+  background-color: #f59e0b;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s;
+  font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
 }
+.btn-primary:hover {
+  background-color: rgba(245, 158, 11, 0.9);
+  transform: scale(1.05);
+}
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.5);
+}
+
 .btn-secondary {
-  @apply glass-effect hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/20;
-  font-family: var(--font-primary);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s;
+  font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
 }
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+.btn-secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
 .btn-accent {
-  @apply bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent/50;
-  font-family: var(--font-primary);
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s;
+  font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+}
+.btn-accent:hover {
+  background-color: rgba(37, 99, 235, 0.9);
+  transform: scale(1.05);
+}
+.btn-accent:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5);
 }
 
 /* GRADIENT TEXT */
@@ -437,19 +541,49 @@ h6 {
 
 /* FORMS */
 .form-input {
-  @apply w-full px-4 py-3 bg-white/5 border border-blue-500/20 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-content placeholder-muted;
-  font-family: var(--font-primary);
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 0.75rem;
+  transition: all 0.3s;
+  color: white;
+  font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
 }
 .form-input:focus {
   background: rgba(255, 255, 255, 0.08);
+  outline: none;
+  box-shadow: 0 0 0 2px #f59e0b;
+  border-color: transparent;
+}
+.form-input::placeholder {
+  color: #6b7280;
 }
 
 /* UTILITIES */
 .container-app {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
+@media (min-width: 640px) {
+  .container-app {
+    padding: 0 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container-app {
+    padding: 0 2rem;
+  }
+}
+
 .section-padding {
-  @apply py-12 lg:py-20;
+  padding: 3rem 0;
+}
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 5rem 0;
+  }
 }
 
 /* MOBILE NAV ANIMATION */
@@ -564,6 +698,25 @@ img {
 }
 
 /* REDUCED MOTION */
+/* Override admin-hidden-default for cookie elements */
+#cookie-consent-banner.admin-hidden-default {
+  display: block !important; /* Allow JavaScript to control visibility */
+}
+
+#cookie-settings-modal.admin-hidden-default {
+  display: none !important; /* Start hidden, JavaScript will show as flex */
+}
+
+/* When JavaScript shows the modal, ensure it displays properly */
+#cookie-settings-modal[style*="display: flex"] {
+  display: flex !important;
+}
+
+/* When JavaScript shows the banner, ensure proper initial state */
+#cookie-consent-banner[style*="display: block"] {
+  display: block !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
