@@ -113,4 +113,6 @@ group :production do
   gem "rack-timeout"
   gem "newrelic_rpm"
   gem "sentry-ruby"
+  # Performance optimizations
+  gem "rack-attack"  # Rate limiting and request throttling
 end
