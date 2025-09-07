@@ -17,10 +17,15 @@
 !/tmp/storage/.keep
 /public/uploads
 
-# Compiled assets
-/public/assets
-/app/assets/builds/*
+# Compiled assets (only temp/cache files to prevent breaking project after clone)
+/public/assets/*.tmp
+/public/assets/*.cache
+/public/assets/node_modules
+/app/assets/builds/*.tmp
+/app/assets/builds/*.cache
+/app/assets/builds/node_modules
 !/app/assets/builds/.keep
+# Essential compiled files (CSS, JS, WASM, etc.) are tracked to prevent broken display
 
 # Security
 /config/master.key

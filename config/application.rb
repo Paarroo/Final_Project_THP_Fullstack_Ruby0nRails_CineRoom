@@ -38,10 +38,9 @@ module CineRoom
     config.i18n.default_locale = :fr
     
     # Performance optimizations
-    config.active_record.async_query_executor = :thread_pool
-    config.active_record.database_selector = { delay: 2.seconds }
-    config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
-    config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+    if Rails.env.production?
+      config.active_record.async_query_executor = :thread_pool
+    end
     # config.middleware.use MaintenanceMode
   end
 end

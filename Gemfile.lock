@@ -465,6 +465,8 @@ GEM
     raabro (1.4.0)
     racc (1.8.1)
     rack (3.1.16)
+    rack-attack (6.7.0)
+      rack (>= 1.0, < 4)
     rack-contrib (2.5.0)
       rack (< 4)
     rack-livereload (0.6.1)
@@ -814,6 +816,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 7.0)
+  rack-attack
   rack-livereload
   rack-timeout
   rails (~> 8.0.2.1)
